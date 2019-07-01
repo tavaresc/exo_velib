@@ -1,4 +1,4 @@
 class Position
   include ActiveModel::Model
-  attr_accessor :latitude, :longitude
+  attr_accessor :lat, :lng
 end

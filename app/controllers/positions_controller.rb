@@ -6,8 +6,15 @@ class PositionsController < ApplicationController
   end
 
   def show
-    @position = Position.new(params.permit(:latitude, :longitude))
-    r = get_velib_api
-    puts r
+    @position = Position.new(params.permit(:lat, :lng))
+    set_number_of_positions(5)
+    response = get_velib_api
+
+    response.each do |p|
+      check_position(p, :lat, :lng)
+      puts p
+    end
+
+    puts response
   end
 end

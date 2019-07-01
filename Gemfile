@@ -32,6 +32,8 @@ gem 'activeadmin', '~> 2.1.0'
 gem 'ransack', '~> 2.1.1'
 # Use Haml template engine for HTML
 gem 'haml', '~> 5.1.1'
+# Use Geocoder to calculate distances
+gem 'geocoder', '~> 1.5.1'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
