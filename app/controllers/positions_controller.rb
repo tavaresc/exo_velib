@@ -12,9 +12,8 @@ class PositionsController < ApplicationController
 
     response.each do |p|
       check_position(p, :lat, :lng)
-      puts p
     end
 
-    puts response
+    puts @nearest_positions
   end
 end

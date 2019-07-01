@@ -29,10 +29,11 @@ module PositionsHelper
     elsif @nearest_positions.size < @size
       @nearest_positions << { 'position' => p, 'distance' => p_distance }
     else
-      @nearest_positions = @nearest_positions.map do |near_p|
+      positions = @nearest_positions.map do |near_p|
         if (p_distance < near_p['distance'])
           p_distance
         end
+        @nearest_positions = positions
       end
     end
   end
