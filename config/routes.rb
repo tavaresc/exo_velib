@@ -1,4 +1,7 @@
 Rails.application.routes.draw do
-  resources :positions, only:[:new, :show]
-  root 'positions#new'
+  ActiveAdmin.routes(self)
+  #get 'stations/new'
+  #get 'stations/show'
+  resources :stations, only:[:new, :show]
+  root 'stations#new'
 end
