@@ -1,13 +1,13 @@
 module Velib
   class Repository
     def initialize
-      client = RestClient.new
+      @client = RestClient.new
+      @v_station_mapper = VStationMapper.new
     end
 
-    def list_stations
-      station_mapper = VStationMapper.new
-      raw_stations = client.get_stations
-      raw_stations.map { |station| station_mapper.map(station) } || []
+    def list_v_stations
+      raw_stations = @client.get_stations
+      raw_stations.map { |station| @v_station_mapper.map(station) }# || []
     end
 
     # def map_to_station(response, number_of_stands)

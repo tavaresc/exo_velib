@@ -12,7 +12,7 @@ module Velib
       http.use_ssl = true
       request = Net::HTTP::Get.new(url)
       response = http.request(request)
-      JSON.parse(response.read_body)
+      JSON.parse(response.read_body, symbolize_names: true)
     end
   end
 end

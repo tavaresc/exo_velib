@@ -1,6 +1,6 @@
 module Velib
-  class Position
-    attr_accessor :lat
+  class Position < ActiveModelSerializers::Model
+    attr_accessor :lat,
                   :lng
   end
 end
