@@ -2,7 +2,6 @@ class StationsInteractor
 
   def initialize
     @number_of_stations = 5
-    @number_of_stands = 10
     @repo = Velib::Repository.new
     @serializer = StationSerializer.new
   end

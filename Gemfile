@@ -5,7 +5,7 @@ ruby '2.5.1'
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.2.3'
-# Use Pq as the onterface for PostgreSQL
+# Use Pq as the interface for PostgreSQL
 gem 'pg', '~> 0.18.4'
 # Use Puma as the app server
 gem 'puma', '~> 3.11'
@@ -35,7 +35,7 @@ gem 'haml', '~> 5.1.1'
 # Use Geocoder to calculate distances
 gem 'geocoder', '~> 1.5.1'
 # Use Whenever for cron jobs
-gem 'whenever', '~> 0.9.4'
+gem 'whenever', '~> 1.0'
 # Use Interactor for perfoming user interactions
 gem 'interactor', '~> 3.1.1'
 # Use ActiveModel Serializers for JSON generation
