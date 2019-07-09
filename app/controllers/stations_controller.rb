@@ -5,7 +5,9 @@ class StationsController < ApplicationController
 
   def show
     @station = Station.new(params.permit(:latitude, :longitude))
-    interactor = ClientsInteractor.new
+    interactor = StationsInteractor.new
+    #client = ClientsInteractor.new
+    #client.fetch_and_save_stations
     #all_stations = interactor.fetch_and_save_stations
     #interactor.save_stations(all_stations)
     # set_sizes(5, 10)
@@ -13,7 +15,7 @@ class StationsController < ApplicationController
     # Velib::Repository.new.map_to_station(data, @number_of_stands)
     #byebug
 
-    #nearest_stations = interactor.find_nearest_stations(all_stations, :latitude, :longitude)
-    #puts nearest_stations
+    nearest_stations = interactor.find_nearest_stations(:latitude, :longitude)
+    puts nearest_stations
   end
 end

@@ -18,6 +18,10 @@ class ClientsInteractor
   def save_stations(all_stations)
     all_stations.each do |d|
       station = Station.find_or_initialize_by(id_number: d.id_number)
+
+      station.name = d.name
+      station.latitude = d.latitude
+      station.longitude = d.longitude
       stands = station.available_stands
 
       if stands
