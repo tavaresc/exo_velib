@@ -9,7 +9,7 @@ module Velib
       station = VStation.new
 
       #byebug
-      #station.number = station_json[:number].to_i,
+      station.number = station_json[:number].to_i
       station.contract_name = station_json[:contract_name]
       station.name = station_json[:name]
       station.address = station_json[:address]

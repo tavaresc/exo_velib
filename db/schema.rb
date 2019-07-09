@@ -31,6 +31,7 @@ ActiveRecord::Schema.define(version: 2019_07_02_144200) do
 
   create_table "stations", force: :cascade do |t|
     t.integer "id_number"
+    t.string "name"
     t.float "latitude"
     t.float "longitude"
     t.integer "available_stands", default: [], array: true

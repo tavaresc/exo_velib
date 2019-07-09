@@ -3,6 +3,7 @@ class StationSerializer
     v_stations.map do |v_station|
       Station.new(
         id_number: v_station.number,
+        name: v_station.name,
         latitude: v_station.position.lat,
         longitude: v_station.position.lng,
         available_stands: [v_station.available_bike_stands]
