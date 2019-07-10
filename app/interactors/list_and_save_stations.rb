@@ -1,4 +1,4 @@
-class ClientsInteractor
+class ListAndSaveStations
   def initialize
     @number_of_stands = 10
     @repo = Velib::Repository.new

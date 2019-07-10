@@ -5,6 +5,6 @@
     %th History of 10 last availables stands
   - @stations.each do |station|
     %tr
-      %td= station['station'].name
-      %td= station['station'].available_stands
+      %td= station.name
+      %td= station.available_stands
 

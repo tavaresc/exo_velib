@@ -14,6 +14,6 @@ class StationsInteractor
       s_distance = Geocoder::Calculations.distance_between([lat, lng], [s['latitude'], s['longitude']])
       calculated_stations << { 'station' => s, 'distance' => s_distance }
     end
-    nearest_stations = calculated_stations.sort_by { |s| s['distance'] }.take(5) #.map { |s| s['station'] }
+    nearest_stations = calculated_stations.sort_by { |s| s['distance'] }.take(5).map { |s| s['station'] }
   end
 end

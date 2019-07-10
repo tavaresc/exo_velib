@@ -9,7 +9,7 @@ set :environment, 'development'
 set :output, "/Users/cta/Documents/Projets/intern/Ruby/exo_velib/cron_log.log"
 
 every 1.minute do
-  runner "ClientsInteractor.new.fetch_and_save_stations"
+  runner "ListAndSaveStations.new.fetch_and_save_stations"
 #   command "/usr/bin/some_great_command"
 #   runner "Station.new.try_whenever"
 #  command "echo '---- getting stations! ----'"
