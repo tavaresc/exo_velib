@@ -1,25 +1,10 @@
-%h1 Show
-
+%h1 Nearest stations
 %table
+  %tr
+    %th Station
+    %th History of 10 last availables stands
   - @stations.each do |station|
     %tr
       %td= station['station'].name
-      %td= station['distance']
+      %td= station['station'].available_stands
 
-%br
-NAME  THON HOTEL ARENA
-LATITUDE  59.95128
-LONGITUDE 11.04959
-%br
-8002- PLACE AMBROISE COURTOIS
-2010 - CONFLUENCE DARSE
-5015 - FULCHIRON
-1343 - FLAMMARION GROBET
-00186 - DESBALS BOUALAM
-
-%br
-010_CALLE JOSE DIAZ
-2010 - CONFLUENCE DARSE
-5015 - FULCHIRON
-1343 - FLAMMARION GROBET
-00186 - DESBALS BOUALAM
