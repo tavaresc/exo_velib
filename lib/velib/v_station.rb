@@ -1,5 +1,5 @@
 module Velib
-  class VStation < ActiveModelSerializers::Model
+  class VStation
     attr_accessor :number,
                   :contract_name,
                   :name,

@@ -8,8 +8,8 @@
 set :environment, 'development'
 set :output, "/Users/cta/Documents/Projets/intern/Ruby/exo_velib/cron_log.log"
 
-every 1.minute do
-  runner "ListAndSaveStations.new.fetch_and_save_stations"
+every 1.hour do
+  runner "ListAndSaveStations.new.execute"
 #   command "/usr/bin/some_great_command"
 #   runner "Station.new.try_whenever"
 #  command "echo '---- getting stations! ----'"
