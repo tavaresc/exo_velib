@@ -3,15 +3,11 @@ class ListAndSaveStations
     @number_of_stands = 10
     @repo = Velib::Repository.new
 
-    v_stations = fetch_v_stations
+    v_stations = @repo.list_v_stations
     save_stations(v_stations)
   end
 
   private
-
-  def fetch_v_stations
-    @repo.list_v_stations
-  end
 
   def save_stations(all_stations)
     all_stations.each do |d|

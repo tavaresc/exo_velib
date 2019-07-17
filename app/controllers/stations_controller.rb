@@ -6,14 +6,12 @@ class StationsController < ApplicationController
   def show
     @station = Station.new(params.permit(:latitude, :longitude))
     interactor = FindNearestStations.new
-    #client = ListAndSaveStations.new
-    #client.fetch_and_save_stations
 
-    @stations = interactor.find_nearest_stations(@station.latitude, @station.longitude)
+    @stations = interactor.execute(@station.latitude, @station.longitude)
 
     respond_to do |format|
       format.html { render :show }
-      format.json { render json: @stations }
+      format.json { render json: @stations, fields: [:id_number, :name, :available_stands] }
     end
   end
 end
