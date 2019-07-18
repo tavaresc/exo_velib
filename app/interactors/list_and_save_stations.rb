@@ -9,24 +9,26 @@ class ListAndSaveStations
 
   private
 
-  def save_stations(all_stations)
-    all_stations.each do |d|
-      station = Station.find_or_initialize_by(id_number: d.id_number) do |s|
-        station.name = d.name
-        station.latitude = d.position.lat
-        station.longitude = d.position.lng
-        station.available_stands = [d.available_bike_stands]
+  def save_stations(v_stations)
+    v_stations.each do |v_station|
+      updated_station = Station.find_or_initialize_by(id_number: v_station.number) do |station|
+        station.name = v_station.name
+        station.latitude = v_station.position.lat
+        station.longitude = v_station.position.lng
+        station.available_stands = [v_station.available_bike_stands]
       end
 
-      if station.persisted?
-        station.available_stands = update_available_stands(station.available_stands, d.available_bike_stands)
+      puts "-- updated_station = #{updated_station.name}"
+
+      if updated_station.persisted?
+        updated_station.available_stands = update_available_stands(updated_station.available_stands, v_station.available_bike_stands)
       end
-      station.save
+      updated_station.save
     end
   end
 
   def update_available_stands(available_stands, current_available_stands)
-    incremented_stands = available_stands.concat(current_available_stands)
+    incremented_stands = available_stands << current_available_stands
     incremented_stands_size = incremented_stands.length
     if incremented_stands_size > @number_of_stands
       incremented_stands = incremented_stands.drop(incremented_stands_size - @number_of_stands)
