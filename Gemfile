@@ -22,8 +22,6 @@ gem 'coffee-rails', '~> 4.2'
 gem 'turbolinks', '~> 5'
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 2.5'
-# Use factory_bot_rails to adopt ruby format for fixtures
-gem 'factory_bot_rails', '~> 5.0.2'
 # Use SimpleCov for code coverage analysis
 gem 'simplecov', '~> 0.16.1'
 # Use ActiveAdmin fir website administration
@@ -57,6 +55,8 @@ gem 'bootsnap', '>= 1.1.0', require: false
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
+  # Use factory_bot_rails to adopt ruby format for fixtures
+  gem 'factory_bot_rails', '~> 5.0.2'
 end
 
 group :development do
