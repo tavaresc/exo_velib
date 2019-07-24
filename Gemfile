@@ -38,6 +38,8 @@ gem 'whenever', '~> 1.0'
 gem 'interactor', '~> 3.1.1'
 # Use ActiveModel Serializers for JSON generation
 gem 'active_model_serializers', '~> 0.10.9'
+# Use Vcr for recording http interactions
+gem 'vcr', '~> 5.0.0'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password

@@ -3,7 +3,7 @@ require 'net/https'
 
 module Velib
   class RestClient
-    JCDECAUX_API_KEY = Rails.application.credentials.JCDECAUX_API_KEY
+    JCDECAUX_API_KEY = 12 #Rails.application.credentials.JCDECAUX_API_KEY
 
     def get_stations
       path = "https://api.jcdecaux.com/vls/v1/stations?apiKey=#{JCDECAUX_API_KEY}"

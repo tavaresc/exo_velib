@@ -9,11 +9,13 @@ class FindNearestStationsTest < ActiveSupport::TestCase
   end
 
   test 'should find an array of 5 stations' do
-    lat = Random.new_seed
-    lng = Random.new_seed
-    a = @interactor.execute(lat, lng)
+    # lat = Random.new_seed
+    # lng = Random.new_seed
+    lat = 59.95128
+    lng = 11.04959
+    response = @interactor.execute(lat, lng)
 
-    assert a.length == @number_of_stations
+    assert response.length == @number_of_stations
   end
 
   test 'should find stations numerically sorted' do
@@ -23,19 +25,12 @@ class FindNearestStationsTest < ActiveSupport::TestCase
     response = @interactor.execute(lat, lng)
     previous_distance = 0
 
-    response.each do |station|
-      puts station.name
-      #puts station.id_number
-      puts station.latitude
-      puts station.longitude
-
-
-
-      is_sorted = is_sorted && (previous_distance <= station.distance)
-      previous_distance = station.distance
+    response.each do |s|
+      current_distance = Geocoder::Calculations.distance_between([lat, lng], [s.latitude, s.longitude])
+      is_sorted = is_sorted && (previous_distance <= current_distance)
+      previous_distance = current_distance
     end
 
-    puts is_sorted
     assert is_sorted
   end
 
@@ -51,11 +46,11 @@ class FindNearestStationsTest < ActiveSupport::TestCase
     n = 0
     while n < 10
       create  :station,
-        id_number: n,
-        name: "#{n} - STATION-#{n}",
-        latitude: n,
-        longitude: (n + 1.1234),
-        available_stands: [n, (n + 1)]
+      id_number: n,
+      name: "#{n} - STATION-#{n}",
+      latitude: n * Random.new_seed,
+      longitude: n * Random.new_seed,
+      available_stands: [n, (n + 1)]
 
       n += 1
     end
