@@ -1,20 +1,14 @@
-class ListAndSaveStations
-  def execute
+class SaveStations
+  def execute(v_stations)
     @number_of_stands = 10
-    @repo = Velib::Repository.new
 
-    v_stations = fetch_v_stations
-    save_stations(v_stations)
+    @v_stations = v_stations
+    save_stations
   end
 
   private
-
-  def fetch_v_stations
-    @repo.list_v_stations
-  end
-
-  def save_stations(v_stations)
-    v_stations.each do |v_station|
+  def save_stations
+    @v_stations.each do |v_station|
       updated_station = Station.find_or_initialize_by(id_number: v_station.number) do |station|
         station.name = v_station.name
         station.latitude = v_station.position.lat
