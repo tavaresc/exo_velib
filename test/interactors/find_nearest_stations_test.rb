@@ -9,8 +9,6 @@ class FindNearestStationsTest < ActiveSupport::TestCase
   end
 
   test 'should find an array of 5 stations' do
-    # lat = Random.new_seed
-    # lng = Random.new_seed
     lat = 59.95128
     lng = 11.04959
     response = @interactor.execute(lat, lng)
