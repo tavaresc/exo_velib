@@ -7,9 +7,6 @@ class StationsController < ApplicationController
     @station = Station.new(params.permit(:latitude, :longitude))
     interactor = FindNearestStations.new
 
-    p "--- Loading..."
-    ListStations.new.execute
-
     @stations = interactor.execute(@station.latitude, @station.longitude)
 
     respond_to do |format|

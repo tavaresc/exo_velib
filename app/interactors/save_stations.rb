@@ -16,7 +16,7 @@ class SaveStations
         station.available_stands = [v_station.available_bike_stands]
       end
 
-      puts "-- updated_station = #{updated_station.name}"
+      # puts "-- updated_station = #{updated_station.name}"
 
       if updated_station.persisted?
         updated_station.available_stands = update_available_stands(updated_station.available_stands, v_station.available_bike_stands)
