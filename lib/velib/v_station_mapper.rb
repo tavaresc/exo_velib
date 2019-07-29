@@ -6,7 +6,6 @@ module Velib
 
     def map(station_json)
       station = VStation.new
-
       station.number = station_json[:number].to_i
       station.contract_name = station_json[:contract_name]
       station.name = station_json[:name]

@@ -1,0 +1,17 @@
+{
+  "number": 9087,
+  "contract_name": "marseille",
+  "name": "9087-MAZARGUES",
+  "address": "MAZARGUES - ROND POINT DE MAZARGUES (OBELISQUE)",
+  "position": {
+    "lat": 43.250903869637334,
+    "lng": 5.403244616491982
+  },
+  "banking": true,
+  "bonus": false,
+  "bike_stands": 21,
+  "available_bike_stands": 21,
+  "available_bikes": 0,
+  "status": "OPEN",
+  "last_update": 1564066634000
+}
