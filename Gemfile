@@ -31,7 +31,7 @@ gem 'ransack', '~> 2.1.1'
 # Use Haml template engine for HTML
 gem 'haml', '~> 5.1.1'
 # Use Geocoder to calculate distances
-gem 'geocoder', '~> 1.5.1'
+gem 'geocoder', '~> 1.6.1'
 # Use Whenever for cron jobs
 gem 'whenever', '~> 1.0'
 # Use Interactor for perfoming user interactions
